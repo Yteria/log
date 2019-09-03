@@ -7,10 +7,7 @@ public class log {
         Scanner log = new Scanner(System.in);
         ArrayList<String> logs = new ArrayList<>();
         while (w > 0) {
-            int y = 0;
-            System.out.println("Please select a option");
-            System.out.println("1. Write post");
-            System.out.println("2. Reed logs");
+            PrintMenu();
             int y = log.nextInt();
             if (y == 1){
                 String post = log.nextLine();
@@ -20,5 +17,15 @@ public class log {
             }
 
         }
+    }
+
+    private static void PrintMenu() {
+        System.out.println("Please select a option");
+        System.out.println("1. Write post");
+        System.out.println("2. Reed logs");
+        System.out.println("3. Edit post");
+        System.out.println("4. Save");
+        System.out.println("5. Load");
+        System.out.println("6. Exit");
     }
 }
