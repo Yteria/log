@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class log {
     public static void main(String[] args) {
         int w = 1;
         Scanner log = new Scanner(System.in);
         ArrayList<String> logs = new ArrayList<>();
+
         while (w > 0) {
             PrintMenu();
             int y = log.nextInt();
@@ -17,9 +20,12 @@ public class log {
 
     private static int Answer(int w, Scanner log, ArrayList<String> logs, int y) {
         if (y == 1){
+            LocalDateTime date = LocalDateTime.now();
+            DateTimeFormatter form = DateTimeFormatter.ofPattern( "dd-MM-yyyy HH:mm");
+            String formattedDate = date.format(form);
             System.out.println("Please write a post");
             String post = log.nextLine();
-            logs.add(post);
+            logs.add(formattedDate + " " + post);
         } else if (y == 2) {
             System.out.println("Current logs");
             System.out.println(logs);
@@ -28,8 +34,10 @@ public class log {
 
         } else if (y == 4) {
             System.out.println("Save");
+            System.out.println("WIP");
         } else if (y == 5) {
             System.out.println("Load");
+            System.out.println("WIP");
         } else if (y == 6) {
             w = 0;
         } else {
